@@ -132,36 +132,6 @@ function nextRoot() // 下一个字根显示
     showQuest();
 }
 
-// function getProgress() {
-//     $.ajax({
-//         type: "POST",
-//         // url: "http://localhost/practice/get",
-//         url: "http://49.232.7.128:8000/practice/get",
-//         dataType: 'json',
-//         data: {    // data数据，要参考并符合api格式给定
-//             cookies: document.cookie,
-//             'total': total
-//         },
-//         xhrFields: {
-//             withCredentials: true
-//         },
-//         crossDomain: true,
-//         success: function (res) {
-//             let idx = res["index"];
-//             let cnt = res["count"];
-//             // post传到服务端的数据变成了字符串，喷血
-//             for (let i = 0; i < idx.length; i++) {
-//                 index[i] = parseInt(idx[i]);
-//                 count[i] = parseInt(cnt[i]);
-//             }
-//             showQuest();
-//         },
-//         error: function (msg) {
-//             initCounter();
-//             showQuest();
-//         }
-//     })
-// }
 
 function getProgress() {
     let progress = JSON.parse(window.localStorage.getItem("progress"));
@@ -185,4 +155,8 @@ function saveProgress() {
 
 function clearProgress() {
     localStorage.removeItem("progress");
+    initCounter();
+    saveProgress();
+    maxProgress = 0;
+    showQuest();
 }

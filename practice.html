@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    
+    <title>在线练习</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bulma.min.css">
+</head>
+<body class="has-navbar-fixed-top">
+
+<div>
+    <nav class="navbar is-light is-fixed-top  container" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a id="home" class="navbar-item" href="#">
+                
+                🐅🐎
+            </a>
+
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+
+        <div id="navbarBasicExample" class="navbar-menu">
+            <div class="navbar-start">
+                <a id="course" class="navbar-item" href="#">
+                    教程
+                </a>
+
+
+
+                <a id="practice" class="navbar-item" href="#practice/" style="background-color: rgb(232, 232, 232);">
+                    在线练习
+                </a>
+
+                <a id="split" class="navbar-item" href="#split/">
+                    拆分查询
+                </a>
+
+                
+                
+                
+
+                <a id="shuyu" class="navbar-item" href="#shuyu/">
+                    打字术语
+                </a>
+
+            </div>
+
+            <div class="navbar-end">
+                <div class="navbar-item">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <a id="download" class="navbar-item" href="#download/"> 下载 </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>
+<div style="height: 20px"></div>
+
+
+
+
+
+<div class="container">
+
+    
+    <div class="container is-grouped-centered">
+        <div class="columns">
+            <div class="column is-2"></div>
+            <div class="column is-8">
+                <div style="height: 5px"></div>
+
+                <div id="title">
+                    <h6 class="title is-6">&nbsp;&nbsp;世界の最速の虎コード学習ツール</h6>
+                </div>
+                <!-- 练习界面 -->
+                <div id="box">
+                    <div id="top">
+                        <label class="checkbox" id="top-left" onchange="changeMainRoot()">
+                            <input type="checkbox" id="main-root">
+                            仅练习主根
+                        </label>
+                        <span id="top-right">
+                            <a class="button is-small" href="#practice/" onclick="clearProgress()" style="background-color: #E8E8E8">重置</a>
+                            当前:<strong id="cur">1</strong>&nbsp;最高:<strong id="max">2</strong>&nbsp;总数:<strong id="all">241</strong>
+                        </span>
+                    </div>
+
+                    <div id="mid">
+                        <h1 id="root" class="title is-1">口〇</h1>
+                        <h2 id="code" class="title is-2">Dk</h2>
+                        <input id="input" class="input is-large" type="text" oninput="inputChanged()">
+                    </div>
+
+                    <div id="bot">
+                        <p id="tip">实在想不起来时按空格</p>
+                        <progress id="progress" class="progress is-small" value="2" max="241"></progress>
+                    </div>
+
+                </div>
+
+                <br>
+
+                <div id="box2">
+                    <h2 class="title is-2">使用说明</h2>
+                </div>
+
+            </div>
+            <div class="column is-2"></div>
+        </div>
+    </div>
+
+
+</div>
+
+
+
+    <style>
+        #box {
+            width: 640px;
+            height: 450px;
+            background-color: #E8E8E8;
+            margin: auto;
+            position: relative;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        #top-left {
+            position: absolute;
+            left: 10px;
+        }
+
+        #top-right {
+            position: absolute;
+            right: 10px;
+        }
+
+        #mid {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            top: 0;
+            margin: auto;
+            max-width: 350px;
+            max-height: 220px;
+            text-align: center;
+        }
+
+        @font-face {
+            font-family: SunmanPUA;
+            src: url("TumanPUA.ttf");
+        }
+
+        #root {
+            font-family: 'SunmanPUA';
+        }
+
+        #input {
+            position: absolute;
+            bottom: 10px;
+            left: 0;
+            right: 0;
+            margin: auto;
+            width: 40%;
+            text-align: center;
+        }
+
+        #bot {
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+        }
+
+        #box2, #title {
+            width: 640px;
+            margin: auto;
+        }
+    </style>
+
+    <script src="jquery-3.6.1.min.js"></script>
+    <script src="practice.js"></script>
+
+
+<script>
+    let path = window.location.pathname;
+
+    let pageId = '';
+    if (path.includes('course')) {
+        pageId = 'course';
+    } else if (path.includes('download')) {
+        pageId = 'download';
+    } else if (path.includes('practice')) {
+        pageId = 'practice';
+    } else if (path.includes('register')) {
+        pageId = 'register';
+    } else if (path.includes('split')) {
+        pageId = 'split';
+    } else if (path.includes('schema')) {
+        pageId = 'schema';
+    } else if (path.includes('shuyu')) {
+        pageId = 'shuyu';
+    } else {
+        pageId = 'home';
+    }
+    if (pageId !== '')
+        document.getElementById(pageId).style.backgroundColor = '#E8E8E8';
+
+    // 汉堡导航
+    document.addEventListener('DOMContentLoaded', () => {
+        // Get all "navbar-burger" elements
+        const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+        // Check if there are any navbar burgers
+        if ($navbarBurgers.length > 0) {
+            // Add a click event on each of them
+            $navbarBurgers.forEach(el => {
+                el.addEventListener('click', () => {
+                    // Get the target from the "data-target" attribute
+                    const target = el.dataset.target;
+                    const $target = document.getElementById(target);
+
+                    // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+                    el.classList.toggle('is-active');
+                    $target.classList.toggle('is-active');
+
+                });
+            });
+        }
+    });
+</script>
+
+</body></html>

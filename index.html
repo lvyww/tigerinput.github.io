@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        
+    
+    
     <title>🐅🐎</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 </head>
 
 
@@ -42,8 +44,8 @@
 
     
 <div class="center80">
-		<h1 id="root" >口〇</h1>
-		<h2 id="code" >Dk</h2>
+		<p id="root" >口〇</p>
+		<p id="code" >Dk</p>
 
 		<input id="input" type="text" oninput="inputChanged()">
 
@@ -92,6 +94,7 @@
 
         #root {
             font-family: 'TumanPUA';
+			font-size: 3rem;
 			margin: auto;
             text-align: center;
 			width: 100%;
@@ -100,21 +103,25 @@
         #code {
             font-family: 'TumanPUA';
 			margin: auto;
+			font-size: 1.5rem;
             text-align: center;
 			width: 100%;
         }
 
 		#tip {
-			font-size: x-small;
+			font-size: smaller;
 		}
 
 
 
 		.center80 {
             margin: auto;
-            text-align: center;
-			width: 80%;		
-			clear: both;	
+			position: absolute;
+            top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			text-align: center;
+
 		}
 
 
@@ -146,9 +153,11 @@
 
 
         #input {
-            margin: auto;
+
+			padding: 0.3rem;
+			font-size: 1rem;
             text-align: center;
-			width: 10%;
+			width: 30%;
         }
 
 

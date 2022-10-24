@@ -1,176 +1,170 @@
 <!DOCTYPE html>
 
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    
-    
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
     <title>🐅🐎</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 </head>
 
 
-
 <body>
 
-	<ul>
-		<li><a class="active" href="#">主页</a></li>
-		<li><a href="https://publish.obsidian.md/csj-obsidian/1+-+Archives/Input+Method/%E8%99%8E%E7%A0%81/%E8%99%8E%E7%A0%81%E6%95%99%E7%A8%8B">教程</a></li>
-		<li><a href="http://huma.ysepan.com/">下载</a></li>
-		<li><a href="https://jq.qq.com/?_wv=1027&k=9HbSlI3Z">加群学习: 775237860</a></li></li>
-	</ul>	
+<ul>
+    <li><a class="active" href="#">主页</a></li>
+    <li><a class="active" href="test.html">测试</a></li>
+    <li>
+        <a href="https://publish.obsidian.md/csj-obsidian/1+-+Archives/Input+Method/%E8%99%8E%E7%A0%81/%E8%99%8E%E7%A0%81%E6%95%99%E7%A8%8B">教程</a>
+    </li>
+    <li><a href="http://huma.ysepan.com/">下载</a></li>
+    <li><a href="https://jq.qq.com/?_wv=1027&k=9HbSlI3Z">加群学习: 775237860</a></li>
+    </li>
+</ul>
 
 <div class="top">
-	<div class="floatleft">
-		<label onchange="changeMainRoot()">
-			<input type="checkbox" id="main-root">
-			仅练习主根
-		</label>
+    <div class="floatleft">
+        <label onchange="changeMainRoot()">
+            <input type="checkbox" id="main-root">
+            仅练习主根
+        </label>
 
 
-	</div>
+    </div>
 
 
-
-	<div  class="floatright">
-		<button  onclick="clearProgress()">重置进度</button>
-		<span >
-			&nbsp;当前:<strong id="cur">1</strong>&nbsp;最高:<strong id="max">1</strong>&nbsp;总数:<strong id="all">241</strong>
+    <div class="floatright">
+        <button onclick="clearProgress()">重置进度</button>
+        <span>
+			&nbsp;当前:<strong id="cur">1</strong>&nbsp;最高:<strong id="max">1</strong>&nbsp;总数:<strong
+                id="all">241</strong>
 		</span>
-	</div>
+    </div>
 
 </div>
 
 
-
-    
 <div class="center80">
-		<p id="root" >口〇</p>
-		<p id="code" >Dk</p>
+    <p id="root">口〇</p>
+    <p id="code">Dk</p>
 
-		<input id="input" type="text" oninput="inputChanged()">
+    <input id="input" type="text" oninput="inputChanged()">
 
 
-	<p id="tip">实在想不起来时按空格</p>
-	<progress id="progress" value="1" max="241"></progress>
+    <p id="tip">实在想不起来时按空格</p>
+    <progress id="progress" value="1" max="241"></progress>
 
 </div>
 
 
+<style>
 
 
-	<style>
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #333;
+    }
 
-			
-		ul {
-			list-style-type: none;
-			margin: 0;
-			padding: 0;
-			overflow: hidden;
-			background-color: #333;
-		}
+    li {
+        font-size: 1.0rem;
+        float: left;
+    }
 
-		li {
-			font-size: 1.0rem;
-			float: left;
-		}
+    li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 0.8rem;
+        text-decoration: none;
+    }
 
-		li a {
-			display: block;
-			color: white;
-			text-align: center;
-			padding: 0.8rem;
-			text-decoration: none;
-		}
-
-		li a:hover {
-			background-color: #111;
-		}
+    li a:hover {
+        background-color: #111;
+    }
 
 
+    @font-face {
+        font-family: TumanPUA;
+        src: url("TumanPUA.ttf");
+    }
 
-        @font-face {
-            font-family: TumanPUA;
-            src: url("TumanPUA.ttf");
-        }
+    #root {
+        font-family: TumanPUA, Simsun, Simsum-ExtB, Simsun-ExtG, TH-Sung-TP2, TH-Sung-TP0, serif, sans-serif;
+        margin: auto;
+        font-size: 3rem;
+        text-align: center;
+        width: 100%;
+    }
 
-	#root {
-	  font-family: TumanPUA, Simsun, Simsum-ExtB, Simsun-ExtG, TH-Sung-TP2, TH-Sung-TP0, serif, sans-serif;
-		margin: auto;
-		font-size: 3rem;
-		text-align: center;
-		width: 100%;
-	}
+    #code {
+        font-family: Consolas, Lucida Console, Helvetica, Arial, Times New Roman, Georgia, sans-serif, serif;
+        margin: auto;
+        font-size: 1.5rem;
+        text-align: center;
+        width: 100%;
+    }
 
-	#code {
-	  	font-family: Consolas, Lucida Console, Helvetica, Arial, Times New Roman, Georgia, sans-serif, serif;
-		margin: auto;
-		font-size: 1.5rem;
-		text-align: center;
-		width: 100%;
-	}
-
-		#tip {
-			font-size: smaller;
-		}
-
+    #tip {
+        font-size: smaller;
+    }
 
 
-		.center80 {
-            margin: auto;
-			position: absolute;
-            top: 60%;
+    .center80 {
+        margin: auto;
+        position: absolute;
+        top: 60%;
 
 
+        text-align: center;
+        width: 100%;
 
-			text-align: center;
-			width: 100%;
-
-		}
-
-
-		.top {
-            margin: auto;
-
-            text-align: center;
-			width: 100%;	
-			font-size: small;		
-		}
+    }
 
 
-		.floatleft {
-            margin: 0.3rem;
-            text-align: center;
-			float: left;
-		
-		}
+    .top {
+        margin: auto;
+
+        text-align: center;
+        width: 100%;
+        font-size: small;
+    }
 
 
+    .floatleft {
+        margin: 0.3rem;
+        text-align: center;
+        float: left;
 
-		.floatright {
-            margin: 0.3rem;
-            text-align: center;
-			float: right;
-			clear: right;
-	
-		}
+    }
 
 
+    .floatright {
+        margin: 0.3rem;
+        text-align: center;
+        float: right;
+        clear: right;
 
-        #input {
-
-			padding: 0.3rem;
-			font-size: 1rem;
-            text-align: center;
-			width: 20%;
-        }
-
-
-    </style>
+    }
 
 
-    <script src="practice.js"></script>
+    #input {
+
+        padding: 0.3rem;
+        font-size: 1rem;
+        text-align: center;
+        width: 20%;
+    }
 
 
+</style>
+
+
+<script src="practice.js"></script>
 
 
 </body>
